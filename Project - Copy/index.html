@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Report - AI agent</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+
+    <!-- Modern UI Buttons -->
+    <button id="darkModeToggle" aria-label="Toggle dark mode">🌙</button>
+    <button id="scrollTopBtn" aria-label="Scroll to top">↑</button>
+
+  <!-- PINNED HERO -->
+  <section class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Project Report - Agentic AI</h1>
+      <p>September 11, 2025 | Report</p>
+    </div>
+  </section>
+
+  <!-- Acknowledgment Section -->
+  <section class="acknowledgment">
+    <h2>Acknowledgment</h2>
+    <p>
+      I would like to express my deepest gratitude to 
+      <a href="https://www.ten.com/en" target="_blank" rel="noopener">T.EN Global Business Services Pvt. Ltd.</a> 
+      for giving me the opportunity to work on this project, special thanks to my mentor, Ms.
+      Geetika Pandey, for providing the support and guidance throughout this journey, 
+      and to my peers for being really nice to me, and to everyone who
+      supported me throughout the development of this project. Their guidance and encouragement
+      played a vital role in completing the <strong>Agentic AI Mail Assistant</strong>.
+    </p>
+  </section>
+
+  <!-- Abstract Section -->
+  <section class="abstract">
+    <h2>Abstract</h2>
+    <p>
+      This report presents the design and development of an Agentic AI Mail Assistant,
+      a system that leverages Large Language Models (LLMs) and APIs to automate email management. 
+      The purpose of this report is to document the complete workflow of the project — from 
+      conception and methodology to implementation and results — while highlighting the challenges 
+      and solutions encountered during development.
+    </p>
+    <ul>
+      <li>The project focuses on simplifying the way users interact with their inboxes. Using the Gmail API, the assistant retrieves the latest important emails, processes their contents, and stores them in structured JSON files.</li>
+      <li>With the help of an LLM (initially LLaMA 3 via Ollama, later optimized using the Gemini API), these emails are summarized into concise, meaningful insights.</li>
+      <li>A user-friendly Streamlit interface then allows users to view summaries, expand to see the full email, generate AI-powered draft responses, and send replies directly using the Gmail API.</li>
+    </ul>
+    <p>
+      This integration of retrieval, summarization, and automated response generation demonstrates how agentic AI systems can reduce cognitive load, save time, and enhance productivity in everyday tasks.
+    </p>
+  </section>
+  <!-- Table of Contents -->
+  <nav class="toc">
+    <h2>Table of Contents</h2>
+    <ul>
+      <li><a href="#introduction">Introduction</a></li>
+      <li><a href="#company-overview">Company Overview</a></li>
+      <li><a href="#internship-overview">Internship Overview</a></li>
+      <li><a href="#knowledge-skills">Knowledge and Skills Acquired</a></li>
+      <li><a href="#problems-solutions">Problems Faced and Solutions Applied</a></li>
+      <li><a href="#conclusion">Conclusion and Suggestions</a></li>
+      <li><a href="#references">References</a></li>
+    </ul>
+  </nav>
+  <section id="introduction" class="content">
+    <div class="img-container">
+      <img src="assets/glowing-skyscrapers-illuminate-futuristic-cityscape-night-generated-by-ai.jpg" alt="Introduction Image" class="img">
+      <div class="heading-container">
+        <h1 class="heading">Introduction</h1>
+      </div>
+    </div>
+    <div class="body">
+      <p>Email is one of the most widely used forms of digital communication, but managing it effectively continues to be a major challenge. Overflowing inboxes, lengthy email threads, and repetitive responses often consume valuable time and attention, reducing overall productivity. As organizations and individuals increasingly rely on email for professional and personal communication, the need for intelligent systems to simplify inbox management has grown.</p>
+      <p>This project addresses that challenge by developing an Agentic AI Mail Assistant — a system designed to automate and streamline email handling using the power of Large Language Models (LLMs). The assistant performs three core tasks:</p>
+      <ul>
+        <li><strong>Retrieval</strong> - Fetching the most recent important emails using the Gmail API.</li>
+        <li><strong>Summarization</strong> - Condensing long or complex messages into concise summaries through an LLM.</li>
+        <li><strong>Response Generation</strong> - Providing AI-powered draft replies that users can review, modify, and send directly via the Gmail API.</li>
+      </ul>
+      <p>The project began with experiments using a local LLaMA 3 model via Ollama, which offered strong capabilities but limited speed. To improve responsiveness, the system was later optimized with the Gemini API, delivering faster inference and more reliable results. On the front end, a simple yet effective Streamlit-based interface was built to give users direct control over their inbox.</p>
+      <p>Through this integration of retrieval, summarization, and intelligent response generation, the Mail Agent demonstrates how agentic AI systems can be applied to real-world productivity challenges, reducing manual effort while keeping the user in control.</p>
+    </div>
+  </section>
+
+  <!-- Empty page after the hero -->
+  <section class="spacer"></section>
+
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Build a timeline tied to the hero scroll, and pin the hero
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".hero",
+        start: "top top",
+        end: "+=120%",         // length of the scroll while pinned
+        scrub: true,            // smooth scrubbing
+        pin: true,              // keeps the hero in place while we scroll
+        anticipatePin: 1
+      }
+    });
+
+    // In parallel: move+fade the heading, and fade the overlay
+    tl.to(".hero-content", { y: -180, opacity: 0 }, 0)
+      .to(".hero .overlay", { opacity: 0 }, 0);
+
+    // Optional subtle background zoom for depth (uncomment if you like)
+    // tl.to(".hero", { backgroundSize: "110%" }, 0);
+  </script>
+</body>
+</html>
