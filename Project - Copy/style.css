@@ -1,267 +1,140 @@
-html, body {
-  padding: 0;
-  background: #fff;
-  color: #fff;
-  overflow-x: hidden;
-  font-family: 'Tinos', serif;
-  font-size: 1rem;
+﻿/* Modern CSS Reset and Base Styles */
+* {
   margin: 0;
   padding: 0;
-  background: linear-gradient(135deg, #e0e7ff 0%, #f5f7fa 100%);
-  color: #222;
-  overflow-x: hidden;
-  font-family: 'Tinos', serif;
-  font-size: 1rem;
-  transition: background 0.5s, color 0.5s;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --secondary-bg: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --accent-bg: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --surface-bg: rgba(255, 255, 255, 0.1);
+  --surface-hover: rgba(255, 255, 255, 0.2);
+  --text-primary: #2d3748;
+  --text-secondary: #4a5568;
+  --text-accent: #667eea;
+  --border-color: rgba(255, 255, 255, 0.18);
+  --shadow-light: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  --shadow-medium: 0 15px 35px rgba(31, 38, 135, 0.1);
+  --shadow-heavy: 0 25px 50px rgba(31, 38, 135, 0.15);
 }
 
 html {
   scroll-behavior: smooth;
-}
-  /* Dark mode styles */
-  body.dark-mode {
-    background: linear-gradient(135deg, #232526 0%, #414345 100%);
-    color: #f5f7fa;
-  }
-/* Hero Section */
-.hero {
-  position: relative;
-  height: 100vh;
-  width: 100%;
-  background: url("assets/glowing-molecular-structure-futuristic-galaxy-backdrop-generated-by-ai.jpg") center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  will-change: transform;
-  overflow: hidden;
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(6px);
-  border-radius: 0 0 32px 32px;
+  font-size: 16px;
 }
 
-.hero .overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0);
-  pointer-events: none;
-  will-change: opacity;
-    transition: background 0.5s;
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--primary-bg);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: all 0.3s ease;
 }
 
-.hero .hero-content {
-  position: relative;
-  z-index: 2;
-  color: white;
-  will-change: transform, opacity;
-    background: rgba(255,255,255,0.15);
-    border-radius: 16px;
-    padding: 2rem 3rem;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.15);
-    backdrop-filter: blur(4px);
-}
-
-.hero h1,
-.hero-content h1 {
-  margin: 0 0 .5rem 0;
-  font-size: clamp(2rem, 4vw, 3.5rem);
-  letter-spacing: .5px;
-  font-weight: 400;
-  font-family: 'Tinos', serif;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.2);
-}
-/* Modern UI Buttons */
-#darkModeToggle, #scrollTopBtn {
+.side-navbar {
   position: fixed;
-  right: 2rem;
-  z-index: 100;
-  background: rgba(255,255,255,0.7);
-  color: #222;
-  border: none;
-  border-radius: 50%;
-  width: 48px;
-  height: 48px;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 280px;
+  background: var(--surface-bg);
+  backdrop-filter: blur(20px);
+  border-right: 1px solid var(--border-color);
+  box-shadow: var(--shadow-light);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 0;
+}
+
+.nav-brand h3 {
   font-size: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-  cursor: pointer;
-  transition: background 0.3s, color 0.3s, transform 0.2s;
-  margin-bottom: 1rem;
-}
-#darkModeToggle {
-  top: 2rem;
-}
-#scrollTopBtn {
-  bottom: 2rem;
-  display: none;
-}
-body.dark-mode #darkModeToggle {
-  background: rgba(40,40,40,0.8);
-  color: #f5f7fa;
-}
-body.dark-mode #scrollTopBtn {
-  background: rgba(40,40,40,0.8);
-  color: #f5f7fa;
-}
-#darkModeToggle:hover, #scrollTopBtn:hover {
-  transform: scale(1.1);
-  background: #6366f1;
-  color: #fff;
-}
-.acknowledgment, .abstract {
-  background: rgba(255,255,255,0.6);
-  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-  border-radius: 16px;
-  padding: 2rem 2.5rem;
-  margin: 2rem auto;
-  max-width: 800px;
-  backdrop-filter: blur(3px);
-  transition: background 0.5s, color 0.5s;
-}
-body.dark-mode .acknowledgment, body.dark-mode .abstract {
-  background: rgba(40,40,40,0.7);
-  color: #f5f7fa;
-}
-@media (max-width: 600px) {
-  .hero .hero-content {
-    padding: 1rem 0.5rem;
-  }
-  .acknowledgment, .abstract {
-    padding: 1rem 0.5rem;
-  }
-  #darkModeToggle, #scrollTopBtn {
-    right: 1rem;
-    width: 40px;
-    height: 40px;
-    font-size: 1.2rem;
-  }
-}
-
-.hero p,
-.hero-content p {
-  margin: 0;
-  font-size: clamp(1rem, 1.6vw, 1.25rem);
-  opacity: 1;
-  letter-spacing: 1px;
-  font-family: 'Tinos', serif;
-}
-
-/* Spacer */
-.spacer {
-  height: 140vh;
-  background: #fff;
-}
-
-/* Acknowledgment Section */
-.acknowledgment,
-.abstract,
-.body {
-  max-width: 700px;
-  margin: 2rem auto;
-  padding: 1.5rem;
-  background: #fff;
-  color: #222;
-  border-radius: 8px;
-  font-family: 'Tinos', serif;
-}
-h1{
-  color: #fff;
-  font-size: 2.5rem;
-  font-weight: 400;
-  font-family: 'Tinos', serif;
-}
-h2 {
-  font-size: 3rem;
-  font-weight: 400;
-  font-family: 'Tinos', serif;
-  margin-bottom: 1rem;
-}
-p, ul {
-  font-size: 1.2rem;
-  line-height: 1.7;
-  font-family: 'Tinos', serif;
-}
-/* Consistent link color for all links */
-a, a:visited, a:active {
-  color: #2196f3;
-  text-decoration: underline;
-}
-a:hover {
-  color: #d35400;
-}
-.toc {
-  background: #fffbe6;
-  border: 2px solid #ffd700;
-  border-radius: 8px;
-  padding: 1.5em 2em;
-  margin: 2em auto 2em auto;
-  max-width: 500px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-  margin-bottom: 6em;
-
-}
-.toc h2 {
-  color: #222;
+  font-weight: 700;
+  background: var(--accent-bg);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   text-align: center;
-  font-size: 1.5em;
-  margin-bottom: 1em;
-  background: #ffd700;
-  padding: 0.3em 0;
-  border-radius: 4px;
+  margin-bottom: 2rem;
 }
-.toc ul {
+
+.nav-menu {
   list-style: none;
   padding: 0;
+  margin: 0;
+  flex: 1;
 }
-.toc li {
-  margin: 0.7em 0;
-}
-.toc a {
-  color: #0077cc;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s;
-}
-.toc a:hover {
-  color: #d35400;
-  text-decoration: underline;
-}
-.img-container {
-  position: relative;
-  width: 100vw;
-  left: 50%;
-  margin-left: -50vw;
-  height: clamp(180px, 40vw, 420px);
+
+.nav-link {
   display: flex;
   align-items: center;
+  padding: 1rem 1.5rem;
+  text-decoration: none;
+  color: var(--text-secondary);
+  border-radius: 12px;
+  margin: 0.5rem 1rem;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--text-accent);
+  background: var(--surface-hover);
+  transform: translateX(5px);
+}
+
+.nav-icon {
+  margin-right: 0.75rem;
+  font-size: 1.2rem;
+}
+
+.main-content {
+  margin-left: 280px;
+  min-height: 100vh;
+}
+
+.hero {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  overflow: hidden;
+  align-items: center;
+  text-align: center;
+  background: var(--primary-bg);
 }
 
-.img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+.hero-title {
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: var(--accent-bg);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.heading-container {
-  position: absolute;
-  padding: 1.5rem;
-  padding-bottom: 0rem;
-  padding-top: 0rem;
-  max-width: 748px;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  box-sizing: border-box;
+.section {
+  padding: 6rem 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.heading {
-  color: #fff;
-  font-size: clamp(4rem, 5vw, 3rem);
-  border-radius: 16px;
-  margin: 0;
-  z-index: 2;
-  position: absolute;
-  bottom: 3vw;
+.section-content {
+  background: var(--surface-bg);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-medium);
+  padding: 3rem;
+  transition: all 0.3s ease;
+}
+
+.section-content:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-heavy);
 }

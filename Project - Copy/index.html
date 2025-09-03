@@ -3,119 +3,365 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project Report - AI agent</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Project Report - Agentic AI</title>
+  <link rel="stylesheet" href="style.css?v=2025090401">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
+<body>
 
-    <!-- Modern UI Buttons -->
-    <button id="darkModeToggle" aria-label="Toggle dark mode">🌙</button>
-    <button id="scrollTopBtn" aria-label="Scroll to top">↑</button>
-
-  <!-- PINNED HERO -->
-  <section class="hero">
-    <div class="overlay"></div>
-    <div class="hero-content">
-      <h1>Project Report - Agentic AI</h1>
-      <p>September 11, 2025 | Report</p>
+  <!-- Left-side Navigation -->
+  <nav class="side-navbar">
+    <div class="nav-brand">
+      <h3>AI Report</h3>
     </div>
-  </section>
-
-  <!-- Acknowledgment Section -->
-  <section class="acknowledgment">
-    <h2>Acknowledgment</h2>
-    <p>
-      I would like to express my deepest gratitude to 
-      <a href="https://www.ten.com/en" target="_blank" rel="noopener">T.EN Global Business Services Pvt. Ltd.</a> 
-      for giving me the opportunity to work on this project, special thanks to my mentor, Ms.
-      Geetika Pandey, for providing the support and guidance throughout this journey, 
-      and to my peers for being really nice to me, and to everyone who
-      supported me throughout the development of this project. Their guidance and encouragement
-      played a vital role in completing the <strong>Agentic AI Mail Assistant</strong>.
-    </p>
-  </section>
-
-  <!-- Abstract Section -->
-  <section class="abstract">
-    <h2>Abstract</h2>
-    <p>
-      This report presents the design and development of an Agentic AI Mail Assistant,
-      a system that leverages Large Language Models (LLMs) and APIs to automate email management. 
-      The purpose of this report is to document the complete workflow of the project — from 
-      conception and methodology to implementation and results — while highlighting the challenges 
-      and solutions encountered during development.
-    </p>
-    <ul>
-      <li>The project focuses on simplifying the way users interact with their inboxes. Using the Gmail API, the assistant retrieves the latest important emails, processes their contents, and stores them in structured JSON files.</li>
-      <li>With the help of an LLM (initially LLaMA 3 via Ollama, later optimized using the Gemini API), these emails are summarized into concise, meaningful insights.</li>
-      <li>A user-friendly Streamlit interface then allows users to view summaries, expand to see the full email, generate AI-powered draft responses, and send replies directly using the Gmail API.</li>
+    <ul class="nav-menu">
+      <li><a href="#hero" class="nav-link active" data-section="hero">
+        <span class="nav-icon">🏠</span>
+        <span class="nav-text">Home</span>
+      </a></li>
+      <li><a href="#acknowledgment" class="nav-link" data-section="acknowledgment">
+        <span class="nav-icon">🙏</span>
+        <span class="nav-text">Acknowledgment</span>
+      </a></li>
+      <li><a href="#abstract" class="nav-link" data-section="abstract">
+        <span class="nav-icon">📄</span>
+        <span class="nav-text">Abstract</span>
+      </a></li>
+      <li><a href="#introduction" class="nav-link" data-section="introduction">
+        <span class="nav-icon">📖</span>
+        <span class="nav-text">Introduction</span>
+      </a></li>
+      <li><a href="#company-overview" class="nav-link" data-section="company-overview">
+        <span class="nav-icon">🏢</span>
+        <span class="nav-text">Company</span>
+      </a></li>
+      <li><a href="#internship-overview" class="nav-link" data-section="internship-overview">
+        <span class="nav-icon">💼</span>
+        <span class="nav-text">Internship</span>
+      </a></li>
+      <li><a href="#conclusion" class="nav-link" data-section="conclusion">
+        <span class="nav-icon">✨</span>
+        <span class="nav-text">Conclusion</span>
+      </a></li>
     </ul>
-    <p>
-      This integration of retrieval, summarization, and automated response generation demonstrates how agentic AI systems can reduce cognitive load, save time, and enhance productivity in everyday tasks.
-    </p>
-  </section>
-  <!-- Table of Contents -->
-  <nav class="toc">
-    <h2>Table of Contents</h2>
-    <ul>
-      <li><a href="#introduction">Introduction</a></li>
-      <li><a href="#company-overview">Company Overview</a></li>
-      <li><a href="#internship-overview">Internship Overview</a></li>
-      <li><a href="#knowledge-skills">Knowledge and Skills Acquired</a></li>
-      <li><a href="#problems-solutions">Problems Faced and Solutions Applied</a></li>
-      <li><a href="#conclusion">Conclusion and Suggestions</a></li>
-      <li><a href="#references">References</a></li>
-    </ul>
+    
+    <!-- Theme Toggle -->
+    <div class="nav-footer">
+      <button id="darkModeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+        <span class="theme-icon">🌙</span>
+      </button>
+    </div>
   </nav>
-  <section id="introduction" class="content">
-    <div class="img-container">
-      <img src="assets/glowing-skyscrapers-illuminate-futuristic-cityscape-night-generated-by-ai.jpg" alt="Introduction Image" class="img">
-      <div class="heading-container">
-        <h1 class="heading">Introduction</h1>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="hero-background">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
       </div>
-    </div>
-    <div class="body">
-      <p>Email is one of the most widely used forms of digital communication, but managing it effectively continues to be a major challenge. Overflowing inboxes, lengthy email threads, and repetitive responses often consume valuable time and attention, reducing overall productivity. As organizations and individuals increasingly rely on email for professional and personal communication, the need for intelligent systems to simplify inbox management has grown.</p>
-      <p>This project addresses that challenge by developing an Agentic AI Mail Assistant — a system designed to automate and streamline email handling using the power of Large Language Models (LLMs). The assistant performs three core tasks:</p>
-      <ul>
-        <li><strong>Retrieval</strong> - Fetching the most recent important emails using the Gmail API.</li>
-        <li><strong>Summarization</strong> - Condensing long or complex messages into concise summaries through an LLM.</li>
-        <li><strong>Response Generation</strong> - Providing AI-powered draft replies that users can review, modify, and send directly via the Gmail API.</li>
-      </ul>
-      <p>The project began with experiments using a local LLaMA 3 model via Ollama, which offered strong capabilities but limited speed. To improve responsiveness, the system was later optimized with the Gemini API, delivering faster inference and more reliable results. On the front end, a simple yet effective Streamlit-based interface was built to give users direct control over their inbox.</p>
-      <p>Through this integration of retrieval, summarization, and intelligent response generation, the Mail Agent demonstrates how agentic AI systems can be applied to real-world productivity challenges, reducing manual effort while keeping the user in control.</p>
-    </div>
-  </section>
+      <div class="hero-content">
+        <h1 class="hero-title">Project Report</h1>
+        <h2 class="hero-subtitle">Agentic AI Mail Assistant</h2>
+        <p class="hero-date">September 3, 2025 | Technical Report</p>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-number">AI</span>
+            <span class="stat-label">Powered</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Automated</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">LLM</span>
+            <span class="stat-label">Enhanced</span>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <span>Scroll to explore</span>
+        <div class="scroll-arrow">↓</div>
+      </div>
+    </section>
 
-  <!-- Empty page after the hero -->
-  <section class="spacer"></section>
+    <!-- Acknowledgment Section -->
+    <section class="section acknowledgment" id="acknowledgment">
+      <div class="section-header">
+        <h2 class="section-title">Acknowledgment</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="section-content">
+        <div class="acknowledgment-card">
+          <p>
+            I would like to express my deepest gratitude to 
+            <a href="https://www.ten.com/en" target="_blank" rel="noopener" class="link-highlight">T.EN Global Business Services Pvt. Ltd.</a> 
+            for giving me the opportunity to work on this project.
+          </p>
+          <p>
+            Special thanks to my mentor, <strong>Ms. Geetika Pandey</strong>, for providing exceptional support and guidance throughout this journey. 
+            Her expertise and encouragement were instrumental in the successful completion of the <strong>Agentic AI Mail Assistant</strong>.
+          </p>
+          <p>
+            I am also grateful to my colleagues and peers for their collaboration, insights, and the positive working environment that made this project both challenging and rewarding.
+          </p>
+        </div>
+      </div>
+    </section>
 
-  <!-- GSAP + ScrollTrigger -->
-  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
-  <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
-  <script>
-    gsap.registerPlugin(ScrollTrigger);
+    <!-- Abstract Section -->
+    <section class="section abstract" id="abstract">
+      <div class="section-header">
+        <h2 class="section-title">Abstract</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="section-content">
+        <div class="abstract-summary">
+          <p class="lead-text">
+            This report presents the design and development of an <strong>Agentic AI Mail Assistant</strong>, 
+            a sophisticated system that leverages Large Language Models (LLMs) and APIs to automate email management.
+          </p>
+        </div>
+        
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">📧</div>
+            <h3>Email Retrieval</h3>
+            <p>Automated fetching of important emails using Gmail API with intelligent filtering.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🤖</div>
+            <h3>AI Summarization</h3>
+            <p>Advanced LLM processing to create concise, meaningful email summaries.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">✍️</div>
+            <h3>Response Generation</h3>
+            <p>AI-powered draft responses with direct sending capabilities through Gmail API.</p>
+          </div>
+        </div>
 
-    // Build a timeline tied to the hero scroll, and pin the hero
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".hero",
-        start: "top top",
-        end: "+=120%",         // length of the scroll while pinned
-        scrub: true,            // smooth scrubbing
-        pin: true,              // keeps the hero in place while we scroll
-        anticipatePin: 1
-      }
-    });
+        <div class="tech-stack">
+          <h3>Technology Stack</h3>
+          <div class="tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Gmail API</span>
+            <span class="tech-tag">LLaMA 3</span>
+            <span class="tech-tag">Gemini API</span>
+            <span class="tech-tag">Streamlit</span>
+            <span class="tech-tag">JSON</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    // In parallel: move+fade the heading, and fade the overlay
-    tl.to(".hero-content", { y: -180, opacity: 0 }, 0)
-      .to(".hero .overlay", { opacity: 0 }, 0);
+    <!-- Introduction Section -->
+    <section class="section introduction" id="introduction">
+      <div class="section-header">
+        <h2 class="section-title">Introduction</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="section-content">
+        <div class="intro-content">
+          <p>
+            Email management continues to be one of the most significant productivity challenges in modern digital communication. 
+            With overflowing inboxes, lengthy email threads, and repetitive responses consuming valuable time and attention, 
+            there is a growing need for intelligent automation solutions.
+          </p>
+          
+          <div class="problem-solution">
+            <div class="problem">
+              <h3>The Problem</h3>
+              <ul>
+                <li>Information overload in email inboxes</li>
+                <li>Time-consuming manual email processing</li>
+                <li>Repetitive response patterns</li>
+                <li>Difficulty prioritizing important communications</li>
+              </ul>
+            </div>
+            <div class="solution">
+              <h3>Our Solution</h3>
+              <ul>
+                <li>Automated email retrieval and filtering</li>
+                <li>AI-powered content summarization</li>
+                <li>Intelligent response generation</li>
+                <li>Streamlined user interface for control</li>
+              </ul>
+            </div>
+          </div>
 
-    // Optional subtle background zoom for depth (uncomment if you like)
-    // tl.to(".hero", { backgroundSize: "110%" }, 0);
-  </script>
+          <div class="workflow-diagram">
+            <h3>System Workflow</h3>
+            <div class="workflow-steps">
+              <div class="step">
+                <div class="step-number">1</div>
+                <h4>Retrieve</h4>
+                <p>Fetch latest important emails via Gmail API</p>
+              </div>
+              <div class="step-arrow">→</div>
+              <div class="step">
+                <div class="step-number">2</div>
+                <h4>Process</h4>
+                <p>Structure and store email data in JSON format</p>
+              </div>
+              <div class="step-arrow">→</div>
+              <div class="step">
+                <div class="step-number">3</div>
+                <h4>Summarize</h4>
+                <p>Generate concise summaries using LLM</p>
+              </div>
+              <div class="step-arrow">→</div>
+              <div class="step">
+                <div class="step-number">4</div>
+                <h4>Respond</h4>
+                <p>Create AI-powered draft responses</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Company Overview Section -->
+    <section class="section company-overview" id="company-overview">
+      <div class="section-header">
+        <h2 class="section-title">Company Overview</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="section-content">
+        <div class="company-info">
+          <div class="company-card">
+            <h3>T.EN Global Business Services Pvt. Ltd.</h3>
+            <p>
+              A leading technology company specializing in innovative business solutions and cutting-edge software development. 
+              The company focuses on leveraging emerging technologies to solve real-world business challenges.
+            </p>
+            <div class="company-highlights">
+              <div class="highlight">
+                <strong>Industry:</strong> Technology & Business Services
+              </div>
+              <div class="highlight">
+                <strong>Focus:</strong> AI/ML Solutions, Automation, Digital Transformation
+              </div>
+              <div class="highlight">
+                <strong>Mission:</strong> Empowering businesses through intelligent technology solutions
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Internship Overview Section -->
+    <section class="section internship-overview" id="internship-overview">
+      <div class="section-header">
+        <h2 class="section-title">Internship Overview</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="section-content">
+        <div class="internship-details">
+          <div class="detail-card">
+            <h3>Project Scope</h3>
+            <p>
+              Development of an end-to-end AI-powered email management system with a focus on automation, 
+              user experience, and integration with existing email infrastructure.
+            </p>
+          </div>
+          <div class="detail-card">
+            <h3>Learning Objectives</h3>
+            <ul>
+              <li>Hands-on experience with Large Language Models</li>
+              <li>API integration and development</li>
+              <li>User interface design and development</li>
+              <li>Project management and documentation</li>
+            </ul>
+          </div>
+          <div class="detail-card">
+            <h3>Key Deliverables</h3>
+            <ul>
+              <li>Functional AI Mail Assistant application</li>
+              <li>Comprehensive documentation</li>
+              <li>User interface for email management</li>
+              <li>Technical implementation report</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Conclusion Section -->
+    <section class="section conclusion" id="conclusion">
+      <div class="section-header">
+        <h2 class="section-title">Conclusion</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="section-content">
+        <div class="conclusion-content">
+          <p class="lead-text">
+            The Agentic AI Mail Assistant project successfully demonstrates the practical application of 
+            artificial intelligence in solving everyday productivity challenges.
+          </p>
+          
+          <div class="achievements">
+            <h3>Key Achievements</h3>
+            <div class="achievement-list">
+              <div class="achievement">
+                <span class="achievement-icon">✅</span>
+                <span>Successful integration of Gmail API for email automation</span>
+              </div>
+              <div class="achievement">
+                <span class="achievement-icon">✅</span>
+                <span>Effective implementation of LLM-powered summarization</span>
+              </div>
+              <div class="achievement">
+                <span class="achievement-icon">✅</span>
+                <span>User-friendly interface with Streamlit framework</span>
+              </div>
+              <div class="achievement">
+                <span class="achievement-icon">✅</span>
+                <span>Optimized performance through API migration</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="future-work">
+            <h3>Future Enhancements</h3>
+            <div class="enhancement-grid">
+              <div class="enhancement">
+                <h4>Advanced Analytics</h4>
+                <p>Email pattern analysis and productivity insights</p>
+              </div>
+              <div class="enhancement">
+                <h4>Multi-Platform Support</h4>
+                <p>Integration with Outlook, Apple Mail, and other providers</p>
+              </div>
+              <div class="enhancement">
+                <h4>Mobile Application</h4>
+                <p>Native mobile app for on-the-go email management</p>
+              </div>
+              <div class="enhancement">
+                <h4>Enterprise Features</h4>
+                <p>Team collaboration and advanced security features</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Scroll to Top Button -->
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top">
+    <span>↑</span>
+  </button>
+
+  <!-- Scripts -->
+  <script src="scripts.js"></script>
 </body>
 </html>
